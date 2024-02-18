@@ -1,7 +1,7 @@
 import { AstralType } from "../types";
-import { AstralObject } from "./AstralObject";
+import { Astro } from "./Astro";
 
-export class Soloon extends AstralObject {
+export class Soloon extends Astro {
     get type(): AstralType {
         return "SOLoon";
     }

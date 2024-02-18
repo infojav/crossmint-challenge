@@ -5,7 +5,7 @@ describe("Polyannet", () => {
     let polyannet: Polyannet;
 
     beforeEach(() => {
-        polyannet = new Polyannet({ row: UNIVERSE_START, col: UNIVERSE_START });
+        polyannet = new Polyannet();
     });
 
     test("type should be a Polyannet", () => {

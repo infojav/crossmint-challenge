@@ -1,7 +1,7 @@
 import { AstralType } from "../types";
-import { AstralObject } from "./AstralObject";
+import { Astro } from "./Astro";
 
-export class Polyannet extends AstralObject {
+export class Polyannet extends Astro {
     get type(): AstralType {
         return "POLYannet";
     }

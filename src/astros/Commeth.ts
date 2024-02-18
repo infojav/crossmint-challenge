@@ -1,7 +1,7 @@
 import { AstralType } from "../types";
-import { AstralObject } from "./AstralObject";
+import { Astro } from "./Astro";
 
-export class Commeth extends AstralObject {
+export class Commeth extends Astro {
     get type(): AstralType {
         return "commETH";
     }

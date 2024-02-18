@@ -1,28 +1,46 @@
 import { Commeth, Polyannet, Soloon } from "../astros";
-import { UNIVERSE_START } from "../config/constants";
+import { MAX_UNIVERSE_SIZE, UNIVERSE_START } from "../config/constants";
+import { Position } from "../types";
 
-class MetaVerse2d {
+export class Metaverse2d {
     private rows: number;
     private cols: number;
 
-    private universe: Array<Array<any>>;
+    private universe: Array<Array<Commeth | Polyannet | Soloon>>;
+
+    private validateUniverseSize(rows: number, cols: number) {
+        if (this.rows < UNIVERSE_START || this.cols < UNIVERSE_START || this.rows * this.cols > MAX_UNIVERSE_SIZE) {
+            throw new Error("Invalid universe size");
+        }
+    }
 
     constructor(rows: number, cols: number) {
         this.rows = rows;
         this.cols = cols;
 
-        if (rows < UNIVERSE_START || cols < UNIVERSE_START) {
-            throw new Error("Invalid universe size");
-        }
-
+        this.validateUniverseSize(rows, cols);
         this.universe = new Array(rows).fill(new Array(cols).fill(null));
     }
 
-    public addAstro(astro: Commeth | Polyannet | Soloon) {
-        this.universe[astro.Position.row + UNIVERSE_START][astro.Position.col + UNIVERSE_START] = astro;
+    addAstro(astro: Commeth | Polyannet | Soloon, position: Position) {
+        const row = position.row + UNIVERSE_START;
+        const col = position.col + UNIVERSE_START;
+
+        this.universe[row][col] = astro;
     }
 
-    public getAstro(row: number, col: number) {
-        return this.universe[row + UNIVERSE_START][col + UNIVERSE_START];
+    hasAstro(position: Position) {
+        const row = position.row + UNIVERSE_START;
+        const col = position.col + UNIVERSE_START;
+
+        return this.universe[row][col];
+    }
+
+    get width() {
+        return this.rows;
+    }
+
+    get height() {
+        return this.cols;
     }
 }

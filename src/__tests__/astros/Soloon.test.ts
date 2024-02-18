@@ -5,7 +5,7 @@ describe("Soloon", () => {
     let soloon: Soloon;
 
     beforeEach(() => {
-        soloon = new Soloon({ row: UNIVERSE_START, col: UNIVERSE_START });
+        soloon = new Soloon();
     });
 
     test("type should be a Soloon", () => {
