@@ -1,46 +1,39 @@
-import { Commeth, Polyannet, Soloon } from "../astros";
-import { MAX_UNIVERSE_SIZE, UNIVERSE_START } from "../config/constants";
-import { Position } from "../types";
+import { CrossmintChallengeAPI } from "../api/crossmint-challenge";
+import { AstralObject, Commeth, Polyannet, Soloon } from "../astros";
+import { appConfig } from "../config";
+import { Color, Direction, Position } from "../types";
 
 export class Metaverse2d {
-    private rows: number;
-    private cols: number;
+    private _api: CrossmintChallengeAPI;
 
-    private universe: Array<Array<Commeth | Polyannet | Soloon>>;
-
-    private validateUniverseSize(rows: number, cols: number) {
-        if (this.rows < UNIVERSE_START || this.cols < UNIVERSE_START || this.rows * this.cols > MAX_UNIVERSE_SIZE) {
-            throw new Error("Invalid universe size");
-        }
+    constructor() {
+        this._api = CrossmintChallengeAPI.Instance;
     }
 
-    constructor(rows: number, cols: number) {
-        this.rows = rows;
-        this.cols = cols;
-
-        this.validateUniverseSize(rows, cols);
-        this.universe = new Array(rows).fill(new Array(cols).fill(null));
+    async addPolyannet(position: Position) {
+        const polyannet = new Polyannet(position);
+        return await this._api.addAstro(polyannet);
     }
 
-    addAstro(astro: Commeth | Polyannet | Soloon, position: Position) {
-        const row = position.row + UNIVERSE_START;
-        const col = position.col + UNIVERSE_START;
-
-        this.universe[row][col] = astro;
+    async addSoloon(position: Position, color: Color) {
+        const soloon = new Soloon(position, color);
+        return await this._api.addAstro(soloon);
     }
 
-    hasAstro(position: Position) {
-        const row = position.row + UNIVERSE_START;
-        const col = position.col + UNIVERSE_START;
-
-        return this.universe[row][col];
+    async addCommeth(position: Position, direction: Direction) {
+        const commeth = new Commeth(position, direction);
+        return await this._api.addAstro(commeth);
     }
 
-    get width() {
-        return this.rows;
+    async deletePolyannet(position: Position) {
+        return this._api.deletePolyannet(position);
     }
 
-    get height() {
-        return this.cols;
+    async deleteSoloon(position: Position) {
+        return this._api.deleteSoloon(position);
+    }
+
+    async deleteCommeth(position: Position) {
+        return this._api.deleteCommeth(position);
     }
 }

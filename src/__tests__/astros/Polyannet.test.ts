@@ -1,11 +1,11 @@
 import { Polyannet } from "../../astros/Polyannet";
-import { UNIVERSE_START } from "../../config/constants";
+import { appConfig } from "../../config";
 
 describe("Polyannet", () => {
     let polyannet: Polyannet;
 
     beforeEach(() => {
-        polyannet = new Polyannet();
+        polyannet = new Polyannet({ row: appConfig.UNIVERSE_START, col: appConfig.UNIVERSE_START });
     });
 
     test("type should be a Polyannet", () => {

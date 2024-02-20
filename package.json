@@ -6,7 +6,7 @@
     "scripts": {
         "build": "rimraf ./build && tsc",
         "start": "npm run build && node build/index.js",
-        "start:dev": "npx nodemon",
+        "start:dev": "NODE_ENV=development npx nodemon",
         "fmt": "prettier --write '{*,**/*}.{js,ts,jsx,tsx,json}'",
         "lint": "eslint --ext .ts . && prettier --check '{*,**/*}.{js,ts,jsx,tsx,json}'",
         "lint:fix": "eslint --fix --ext .ts . && npm run fmt",
@@ -28,6 +28,7 @@
         "@types/node": "^20.11.17",
         "@typescript-eslint/eslint-plugin": "^7.0.1",
         "@typescript-eslint/parser": "^7.0.1",
+        "dotenv": "^16.4.4",
         "eslint": "^8.56.0",
         "eslint-config-prettier": "^9.1.0",
         "eslint-plugin-prettier": "^5.1.3",
@@ -42,7 +43,7 @@
         "typescript": "^5.3.3"
     },
     "engines": {
-        "node": ">=12.0.0"
+        "node": ">=21.0.0"
     },
     "engine-strict": true,
     "nodemonConfig": {
@@ -69,6 +70,7 @@
         }
     },
     "dependencies": {
+        "node-fetch": "^3.3.2",
         "semver": "^7.6.0"
     }
 }

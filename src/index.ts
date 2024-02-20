@@ -1,17 +1,11 @@
-import http from "http";
+import { CrossmintChallengeAPI } from "./api/crossmint-challenge";
+import crossPositions from "./services/crossPositions";
 
-import { SERVER_PORT } from "./config/constants";
+// const api = CrossmintChallengeAPI.Instance;
+// api.getGoal().then((response) => {
+//     console.log(response);
+// });
 
-const port = process.env.SERVER_PORT || SERVER_PORT;
+const r = crossPositions(11, 2);
 
-const server = http.createServer((req, res) => {
-    res.statusCode = 200;
-    res.setHeader("Content-Type", "text/plain");
-    res.end("Hello, World!\n");
-});
-
-server.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}/`);
-});
-
-export { server };
+console.log(r);
