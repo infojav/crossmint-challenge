@@ -1,17 +1,17 @@
-import { CrossmintChallengeAPI } from "../../api/crossmint-challenge";
-import { Commeth, Polyannet, Soloon } from "../../astros";
+import { MegaverseCreator } from "../../api/megaverseCreator";
+import { Polyannet } from "../../astros";
 
 describe("CrossmintChallengeAPI", () => {
-    let api: CrossmintChallengeAPI;
+    let api: MegaverseCreator;
     let polyannet: Polyannet;
-    let soloon: Soloon;
-    let commeth: Commeth;
+    // let soloon: Soloon;
+    // let commeth: Commeth;
 
     beforeEach(() => {
-        api = CrossmintChallengeAPI.Instance;
+        api = MegaverseCreator.Instance;
         polyannet = new Polyannet({ row: 0, col: 0 });
-        soloon = new Soloon({ row: 0, col: 0 }, "blue");
-        commeth = new Commeth({ row: 0, col: 0 }, "up");
+        // soloon = new Soloon({ row: 0, col: 0 }, "blue");
+        // commeth = new Commeth({ row: 0, col: 0 }, "up");
     });
 
     it("should add a Polyannet", async () => {

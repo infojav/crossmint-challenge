@@ -1,10 +1,10 @@
 import { appConfig } from "../config";
-import { AstralType, Color, Direction, Position } from "../types";
+import { AstralType, Color, Direction, Position } from "./types";
 
 export interface AstralObject {
     type: AstralType;
     position: Position;
-    color?: string;
+    color?: Color;
     direction?: Direction;
 }
 

@@ -1,6 +1,5 @@
-import { AstralObject } from "../astros";
+import { AstralObject, AstralType, Position } from "../astros";
 import { appConfig } from "../config";
-import { AstralType, Position } from "../types";
 
 const API = appConfig.CROSSMINT_CHALLENGE_API;
 const candidateId = { candidateId: appConfig.CANDIDATE_ID };
@@ -11,8 +10,8 @@ const headers = {
     },
 };
 
-export class CrossmintChallengeAPI {
-    private static _instance: CrossmintChallengeAPI;
+export class MegaverseCreator {
+    private static _instance: MegaverseCreator;
 
     private constructor() {
         if (!appConfig.CANDIDATE_ID) {

@@ -16,7 +16,7 @@ describe("Commeth", () => {
 
 describe("Commeth positions", () => {
     test("position should be { row: 1, col: 1 }", () => {
-        let commeth = new Commeth({ row: appConfig.UNIVERSE_START, col: appConfig.UNIVERSE_START }, "right");
+        const commeth = new Commeth({ row: appConfig.UNIVERSE_START, col: appConfig.UNIVERSE_START }, "right");
         expect(commeth.position).toEqual({ row: appConfig.UNIVERSE_START, col: appConfig.UNIVERSE_START });
     });
 

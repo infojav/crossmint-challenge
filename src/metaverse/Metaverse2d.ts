@@ -1,18 +1,16 @@
-import { CrossmintChallengeAPI } from "../api/crossmint-challenge";
-import { AstralObject, Commeth, Polyannet, Soloon } from "../astros";
-import { appConfig } from "../config";
-import { Color, Direction, Position } from "../types";
+import { MegaverseCreator } from "../api/megaverseCreator";
+import { Color, Commeth, Direction, Polyannet, Position, Soloon } from "../astros";
 
 export class Metaverse2d {
-    private _api: CrossmintChallengeAPI;
+    private _api: MegaverseCreator;
 
     constructor() {
-        this._api = CrossmintChallengeAPI.Instance;
+        this._api = MegaverseCreator.Instance;
     }
 
     async addPolyannet(position: Position) {
         const polyannet = new Polyannet(position);
-        return await this._api.addAstro(polyannet);
+        return this._api.addAstro(polyannet);
     }
 
     async addSoloon(position: Position, color: Color) {

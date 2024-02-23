@@ -1,4 +1,4 @@
-import { Position } from "../types";
+import { Position } from "../astros";
 
 // Returns the positions, which form a regular cross within a space composed of rows and cols (2D).
 //
@@ -11,7 +11,7 @@ import { Position } from "../types";
 //
 // If not, the function returns an empty array.
 export default (dimension: number, emptyBorder: number = 0) => {
-    let _positions: Position[] = [];
+    const _positions: Position[] = [];
 
     if (!(dimension % 2) || emptyBorder % 2 || dimension - emptyBorder * 2 < 1 || emptyBorder < 0) {
         return _positions;

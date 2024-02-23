@@ -1,1 +1,1 @@
-export { Metaverse2d } from "./Metaverse2d";
+export * from "./Metaverse2d";

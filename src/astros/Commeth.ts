@@ -1,5 +1,5 @@
-import { AstralType, Direction, Position } from "../types";
 import { Astro } from "./Astro";
+import { AstralType, Direction, Position } from "./types";
 
 export class Commeth extends Astro {
     private _direction: Direction;

@@ -1,5 +1,5 @@
-import { AstralType, Color, Position } from "../types";
 import { Astro } from "./Astro";
+import { AstralType, Color, Position } from "./types";
 
 export class Soloon extends Astro {
     private _color: Color;
