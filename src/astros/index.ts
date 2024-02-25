@@ -1,5 +1,5 @@
-export * from "./Commeth";
+export * from "./Cometh";
 export * from "./Soloon";
-export * from "./Polyannet";
+export * from "./Polyanet";
 export * from "./Astro";
 export * from "./types";

@@ -12,7 +12,7 @@ export abstract class Astro implements AstralObject {
     private _position: Position;
 
     constructor(position: Position) {
-        if (position.row < appConfig.UNIVERSE_START || position.col < appConfig.UNIVERSE_START) {
+        if (position.row < appConfig.UNIVERSE_START || position.column < appConfig.UNIVERSE_START) {
             throw new Error("Invalid position");
         }
 
@@ -21,7 +21,7 @@ export abstract class Astro implements AstralObject {
 
     abstract get type(): AstralType;
 
-    get position() {
-        return { row: this._position.row, col: this._position.col };
+    get position(): Position {
+        return this._position;
     }
 }

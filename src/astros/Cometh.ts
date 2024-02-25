@@ -1,7 +1,7 @@
 import { Astro } from "./Astro";
 import { AstralType, Direction, Position } from "./types";
 
-export class Commeth extends Astro {
+export class Cometh extends Astro {
     private _direction: Direction;
 
     constructor(position: Position, direction: Direction) {
@@ -10,7 +10,7 @@ export class Commeth extends Astro {
     }
 
     get type(): AstralType {
-        return "commETH";
+        return "comETH";
     }
 
     get direction(): Direction {

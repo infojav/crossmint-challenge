@@ -1,5 +1,6 @@
 import { AstralObject, AstralType, Position } from "../astros";
 import { appConfig } from "../config";
+import { logger } from "../utils";
 
 const API = appConfig.CROSSMINT_CHALLENGE_API;
 const candidateId = { candidateId: appConfig.CANDIDATE_ID };
@@ -19,16 +20,19 @@ export class MegaverseCreator {
         }
     }
 
-    // Ssinlgeton pattern
+    // Sinlgeton pattern
     static get Instance() {
         return this._instance || (this._instance = new this());
     }
 
-    private async deleteAstro(type: AstralType, position: Position) {
-        const response = await fetch(`${API}${type}?=row=${position.row}&col=${position.col}`, {
+    private async _deleteAstro(type: AstralType, position: Position) {
+        const _endpoint = `${API}${type.toLowerCase()}s`;
+        const _body = JSON.stringify({ ...candidateId });
+
+        const response = await fetch(_endpoint, {
             method: "DELETE",
             ...headers,
-            body: JSON.stringify({ ...candidateId }),
+            body: _body,
         }).catch((err) => {
             throw new Error(err);
         });
@@ -38,33 +42,43 @@ export class MegaverseCreator {
 
     async addAstro(astro: AstralObject) {
         const _color = astro.type === "SOLoon" ? { color: astro.color } : {};
-        const _direction = astro.type === "commETH" ? { direction: astro.direction } : {};
+        const _direction = astro.type === "comETH" ? { direction: astro.direction } : {};
 
-        const response = await fetch(`${API}${astro.type}?=row=${astro.position.row}&col=${astro.position.col}`, {
+        const _endpoint = `${API}${astro.type.toLocaleLowerCase()}s`;
+        const _body = JSON.stringify({
+            ...candidateId,
+            ..._color,
+            ..._direction,
+            ...astro.position,
+        });
+
+        console.log(_endpoint, _body);
+
+        const response = await fetch(_endpoint, {
             method: "POST",
             ...headers,
-            body: JSON.stringify({
-                ...candidateId,
-                ..._color,
-                ..._direction,
-            }),
+            body: _body,
         }).catch((err) => {
             throw new Error(err);
         });
-
-        return await response.json();
+        if (response.status !== 200) {
+            logger.error({ message: `Failed to add ${astro.type}, ${response.status}, ${response.statusText}` });
+            return {};
+        } else {
+            return response.json();
+        }
     }
 
-    async deletePolyannet(position: Position) {
-        return await this.deleteAstro("POLYannet", position);
+    async deletePolyanet(position: Position) {
+        return await this._deleteAstro("POLYanet", position);
     }
 
     async deleteSoloon(position: Position) {
-        return await this.deleteAstro("SOLoon", position);
+        return await this._deleteAstro("SOLoon", position);
     }
 
-    async deleteCommeth(position: Position) {
-        return await this.deleteAstro("commETH", position);
+    async deleteCometh(position: Position) {
+        return await this._deleteAstro("comETH", position);
     }
 
     async getGoal() {

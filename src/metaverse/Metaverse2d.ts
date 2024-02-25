@@ -1,5 +1,5 @@
 import { MegaverseCreator } from "../api/megaverseCreator";
-import { Color, Commeth, Direction, Polyannet, Position, Soloon } from "../astros";
+import { Color, Cometh, Direction, Polyanet, Position, Soloon } from "../astros";
 
 export class Metaverse2d {
     private _api: MegaverseCreator;
@@ -9,7 +9,7 @@ export class Metaverse2d {
     }
 
     async addPolyannet(position: Position) {
-        const polyannet = new Polyannet(position);
+        const polyannet = new Polyanet(position);
         return this._api.addAstro(polyannet);
     }
 
@@ -18,20 +18,20 @@ export class Metaverse2d {
         return await this._api.addAstro(soloon);
     }
 
-    async addCommeth(position: Position, direction: Direction) {
-        const commeth = new Commeth(position, direction);
+    async addCometh(position: Position, direction: Direction) {
+        const commeth = new Cometh(position, direction);
         return await this._api.addAstro(commeth);
     }
 
-    async deletePolyannet(position: Position) {
-        return this._api.deletePolyannet(position);
+    async deletePolyanet(position: Position) {
+        return this._api.deletePolyanet(position);
     }
 
     async deleteSoloon(position: Position) {
         return this._api.deleteSoloon(position);
     }
 
-    async deleteCommeth(position: Position) {
-        return this._api.deleteCommeth(position);
+    async deleteCometh(position: Position) {
+        return this._api.deleteCometh(position);
     }
 }

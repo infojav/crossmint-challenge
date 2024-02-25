@@ -23,22 +23,22 @@ export default (dimension: number, emptyBorder: number = 0) => {
     while (_topPosition !== dimension - _topPosition - 1) {
         _positions.push({
             row: _topPosition,
-            col: _rightPosition,
+            column: _rightPosition,
         });
 
         _positions.push({
             row: _topPosition,
-            col: dimension - _rightPosition - 1,
+            column: dimension - _rightPosition - 1,
         });
 
         _positions.push({
             row: dimension - _topPosition - 1,
-            col: _rightPosition,
+            column: _rightPosition,
         });
 
         _positions.push({
             row: dimension - _topPosition - 1,
-            col: dimension - _rightPosition - 1,
+            column: dimension - _rightPosition - 1,
         });
 
         _rightPosition++;
@@ -47,7 +47,7 @@ export default (dimension: number, emptyBorder: number = 0) => {
 
     _positions.push({
         row: _rightPosition,
-        col: _topPosition,
+        column: _topPosition,
     });
 
     return _positions;
