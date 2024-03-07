@@ -1,16 +1,17 @@
-import { MegaverseCreator } from "../api/megaverseCreator";
-import { Color, Cometh, Direction, Polyanet, Position, Soloon } from "../astros";
+import { MetaverseApi } from "../api/metaverseApi";
+import { AstroDescription, AstroObject, Color, Cometh, Direction, Polyanet, Position, Soloon } from "../astros";
 
 export class Metaverse2d {
-    private _api: MegaverseCreator;
+    private _api: MetaverseApi;
 
     constructor() {
-        this._api = MegaverseCreator.Instance;
+        this._api = MetaverseApi.getInstance();
     }
 
     async addPolyannet(position: Position) {
         const polyannet = new Polyanet(position);
-        return this._api.addAstro(polyannet);
+        const response = await this._api.addAstro(polyannet);
+        return response;
     }
 
     async addSoloon(position: Position, color: Color) {
@@ -33,5 +34,13 @@ export class Metaverse2d {
 
     async deleteCometh(position: Position) {
         return this._api.deleteCometh(position);
+    }
+
+    async getGoal(): Promise<{ goal: Array<Array<AstroDescription>> }> {
+        return this._api.getGoal();
+    }
+
+    async getCurrentMap(): Promise<{ map: { content: Array<Array<AstroObject>> } }> {
+        return this._api.getCurrentMap();
     }
 }

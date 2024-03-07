@@ -25,16 +25,10 @@ npm run test --watchAll  // watch all files in the repo
 npm run test --coverage  // run tests with coverage
 ```
 
-#### To start all the dev environment
+#### To create Metaverse from goal Map.
 
 ```
 npm run start
-```
-
-#### Scritps
-
-```
-npm run check:node:version
 ```
 
 ## Suggested plugins for IDEs

@@ -1,3 +1,2 @@
-import { getLogger } from "./logger";
-
-export const logger = getLogger(console, "info");
+export * from "./logger";
+export * from "./sleep";

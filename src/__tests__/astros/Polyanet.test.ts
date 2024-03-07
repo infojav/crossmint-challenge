@@ -1,4 +1,4 @@
-import { Polyanet } from "../../astros/Polyanet";
+import { Polyanet } from "../../astros";
 import { appConfig } from "../../config";
 
 describe("Polyannet", () => {
@@ -9,6 +9,6 @@ describe("Polyannet", () => {
     });
 
     test("type should be a Polyannet", () => {
-        expect(polyannet.type).toBe("POLYannet");
+        expect(polyannet.type).toBe("POLYanet");
     });
 });

@@ -1,1 +1,1 @@
-export * from "./megaverseCreator";
+export * from "./metaverseApi";

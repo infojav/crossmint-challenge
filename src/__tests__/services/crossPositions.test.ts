@@ -25,39 +25,39 @@ describe("crossPositions", () => {
 
     it("should return the central position when dimension is 1", () => {
         const result = crossPositions(1);
-        expect(result).toEqual([{ row: 0, col: 0 }]);
+        expect(result).toEqual([{ row: 0, column: 0 }]);
     });
 
     it("should return the position when dimension is 7 and border 2", () => {
         const result = crossPositions(7, 2);
         expect(result).toEqual([
-            { row: 2, col: 2 },
-            { row: 2, col: 4 },
-            { row: 4, col: 2 },
-            { row: 4, col: 4 },
-            { row: 3, col: 3 },
+            { row: 2, column: 2 },
+            { row: 2, column: 4 },
+            { row: 4, column: 2 },
+            { row: 4, column: 4 },
+            { row: 3, column: 3 },
         ]);
     });
 
     it("should return the position when dimension is 7 and border 2", () => {
         const result = crossPositions(7, 2);
         expect(result).toEqual([
-            { row: 2, col: 2 },
-            { row: 2, col: 4 },
-            { row: 4, col: 2 },
-            { row: 4, col: 4 },
-            { row: 3, col: 3 },
+            { row: 2, column: 2 },
+            { row: 2, column: 4 },
+            { row: 4, column: 2 },
+            { row: 4, column: 4 },
+            { row: 3, column: 3 },
         ]);
     });
 
     it("should return the position when dimension is 3", () => {
         const result = crossPositions(3);
         expect(result).toEqual([
-            { row: 0, col: 0 },
-            { row: 0, col: 2 },
-            { row: 2, col: 0 },
-            { row: 2, col: 2 },
-            { row: 1, col: 1 },
+            { row: 0, column: 0 },
+            { row: 0, column: 2 },
+            { row: 2, column: 0 },
+            { row: 2, column: 2 },
+            { row: 1, column: 1 },
         ]);
     });
 });

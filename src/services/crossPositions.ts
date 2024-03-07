@@ -13,6 +13,8 @@ import { Position } from "../astros";
 export default (dimension: number, emptyBorder: number = 0) => {
     const _positions: Position[] = [];
 
+    // validate dimension, emptyBorder;
+
     if (!(dimension % 2) || emptyBorder % 2 || dimension - emptyBorder * 2 < 1 || emptyBorder < 0) {
         return _positions;
     }

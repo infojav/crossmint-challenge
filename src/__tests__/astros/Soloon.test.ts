@@ -1,4 +1,4 @@
-import { Soloon } from "../../astros/Soloon";
+import { Soloon } from "../../astros";
 import { appConfig } from "../../config";
 
 describe("Soloon", () => {
