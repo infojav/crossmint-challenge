@@ -10,6 +10,12 @@
 npm install
 ```
 
+#### To replicate a Metaverse from goal Map, it would works on both phases
+
+```bash
+npm run start
+```
+
 #### Run tests and lint files
 
 ```bash
@@ -28,16 +34,10 @@ As any npm run or npm task you can add modifiers to it to adjust your needs. The
 npm run test
 ```
 
-#### To replicate a Metaverse looking goal Map, it works on both phases
-
-```bash
-npm run start
-```
-
 ## Suggested plugins for IDEs
 
 ### VSCode
 
-**ESLint**
-**Prettier** - Code formatter (Remember to turn on "Format on Save" under Project Preference)
+**ESLint**  
+**Prettier** - Code formatter (Remember to turn on "Format on Save" under Project Preference)  
 **Jest**
