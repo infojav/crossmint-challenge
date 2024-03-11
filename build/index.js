@@ -7,5 +7,5 @@ const metaverse_1 = require("./metaverse");
 const compareMetaverse_1 = __importDefault(require("./services/compareMetaverse"));
 const m = new metaverse_1.Metaverse2d();
 // replicateMap(m);
-// resetMap(m);
 (0, compareMetaverse_1.default)(m);
+// resetMap(m);

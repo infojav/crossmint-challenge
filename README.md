@@ -6,28 +6,31 @@
 
 #### Installing and linking all dependencies for all the packages
 
-```
+```bash
 npm install
 ```
 
 #### Run tests and lint files
 
-```
-npm run test     // unit tests
-npm run lint     // lint js and css
+```bash
+npm run test
+npm run lint
+npm run lint:fix
 ```
 
+```text
 As any npm run or npm task you can add modifiers to it to adjust your needs. These are some possibilities with jest unit tests.
-
-```
-npm run test --watch     // watching the modified files
-npm run test --watchAll  // watch all files in the repo
-npm run test --coverage  // run tests with coverage
 ```
 
-#### To create Metaverse from goal Map.
+#### test files
 
+```bash
+npm run test
 ```
+
+#### To replicate a Metaverse looking goal Map, it works on both phases
+
+```bash
 npm run start
 ```
 
@@ -35,6 +38,6 @@ npm run start
 
 ### VSCode
 
--   ESLint
--   Prettier - Code formatter (Remember to turn on "Format on Save" under Project Preference)
--   Jest
+**ESLint**
+**Prettier** - Code formatter (Remember to turn on "Format on Save" under Project Preference)
+**Jest**

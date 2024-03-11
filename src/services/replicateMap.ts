@@ -27,8 +27,8 @@ export default (metaverse: Metaverse2d) =>
                         case "WHITE_SOLOON":
                         case "RED_SOLOON":
                         case "BLUE_SOLOON":
-                        case "PURPLE_SOLOON":
-                            const color = astro.toString().split("_")[0].toLowerCase();
+                        case "PURPLE_SOLOON": {
+                            const color = astro.toString().split("_")[0];
                             metaverse
                                 .addSoloon({ row, column }, color as Color)
                                 .then((response) => {
@@ -44,10 +44,11 @@ export default (metaverse: Metaverse2d) =>
                                     });
                                 });
                             break;
+                        }
                         case "UP_COMETH":
                         case "DOWN_COMETH":
                         case "LEFT_COMETH":
-                        case "RIGHT_COMETH":
+                        case "RIGHT_COMETH": {
                             const direction = astro.toString().split("_")[0].toLowerCase();
                             metaverse
                                 .addCometh({ row, column }, direction as Direction)
@@ -64,6 +65,7 @@ export default (metaverse: Metaverse2d) =>
                                     });
                                 });
                             break;
+                        }
                         default:
                             break;
                     }

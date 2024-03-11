@@ -2,6 +2,7 @@ import { Metaverse2d } from "../metaverse";
 import { logger } from "../utils";
 import crossPositions from "./crossPositions";
 
+// This service adds a Polyanet to the metaverse in the cross positions. don´t need the map example.
 export default (metaverse: Metaverse2d, dimension: number, emptyBorder = 0) => {
     crossPositions(dimension, emptyBorder).forEach(async (position) => {
         metaverse

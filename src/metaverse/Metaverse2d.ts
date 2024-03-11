@@ -1,4 +1,4 @@
-import { MetaverseApi } from "../api/metaverseApi";
+import MetaverseApi from "../api/metaverseApi";
 import { AstroDescription, AstroObject, Color, Cometh, Direction, Polyanet, Position, Soloon } from "../astros";
 
 export class Metaverse2d {

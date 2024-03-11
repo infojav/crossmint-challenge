@@ -15,7 +15,6 @@ export default (metaverse: Metaverse2d) => {
                                     message: `Error is Not an SPACE on position at: ${row}, ${column}`,
                                 });
                                 break;
-
                             case "POLYANET":
                                 if (currentMap?.map?.content[row][column].type === 0) return;
                                 logger.error({
@@ -39,6 +38,7 @@ export default (metaverse: Metaverse2d) => {
                                 logger.error({
                                     message: `Error is Not a COMETH on position at: ${row}, ${column}`,
                                 });
+                                break;
                             default:
                                 break;
                         }

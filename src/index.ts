@@ -1,11 +1,8 @@
 import { Metaverse2d } from "./metaverse";
-import compareMetaverse from "./services/compareMetaverse";
 import replicateMap from "./services/replicateMap";
-import resetMap from "./services/resetMap";
 
 const m = new Metaverse2d();
 
+// replicate a map looking the candidate's goal map.
+// It works in both phases 1 and 2.
 replicateMap(m);
-
-// compareMetaverse(m);
-// resetMap(m);

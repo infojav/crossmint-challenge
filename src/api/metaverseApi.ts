@@ -1,9 +1,5 @@
-import { resolve } from "path";
-
 import { AstralObject, AstralType, Position } from "../astros";
 import { appConfig } from "../config";
-import { logger, sleep } from "../utils";
-import { consoleFactory } from "../utils/logger/console";
 
 const API = appConfig.CROSSMINT_CHALLENGE_API;
 const CANDIDATE_ID = appConfig.CANDIDATE_ID;
@@ -14,7 +10,7 @@ const headers = {
     },
 };
 
-export class MetaverseApi {
+export default class MetaverseApi {
     private static _instance: MetaverseApi;
     private static _lastRequest = 0;
 

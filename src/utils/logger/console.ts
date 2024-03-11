@@ -1,5 +1,6 @@
 import { Logger } from "./types";
 
+/* eslint no-console: off */
 export const consoleFactory = (logger: Logger) => () => {
     console.log = (message) => logger.info.call(logger, { message });
     console.info = (message) => logger.info.call(logger, { message });
